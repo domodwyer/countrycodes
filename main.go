@@ -1,10 +1,12 @@
+// Package countrycodes provides an easy way to convert between ISO3166-1
+// ALPHA-2 codes and country names.
 package countrycodes
 
 import "errors"
 
-type CountryMap map[string]string
+type countryMap map[string]string
 
-var Map = CountryMap{
+var cmap = countryMap{
 	"GB": "United Kingdom",
 	"US": "United States",
 	"AF": "Afghanistan",
@@ -246,20 +248,26 @@ var Map = CountryMap{
 	"ZW": "Zimbabwe",
 }
 
+// ToName converts a 2 character country code (such as GB) to the country name
+// (United Kingdom). Returns the original input and an error if the country code
+// is not found.
 func ToName(c string) (string, error) {
-	if v, ok := Map[c]; ok {
+	if v, ok := cmap[c]; ok {
 		return v, nil
 	}
 
-	return c, errors.New("Failed to find country code")
+	return c, errors.New("failed to find country code")
 }
 
+// ToCode converts a country name (such as United Kingdom) to a 2 character
+// country code (GB). Returns the original input and an error if the country
+// name is not found.
 func ToCode(c string) (string, error) {
-	for k, v := range Map {
+	for k, v := range cmap {
 		if v == c {
 			return k, nil
 		}
 	}
 
-	return c, errors.New("Failed to find country code")
+	return c, errors.New("failed to find country name")
 }
