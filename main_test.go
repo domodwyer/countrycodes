@@ -108,7 +108,7 @@ func ExampleToName() {
 }
 
 func ExampleToCode() {
-	code, err := countrycodes.ToName("United Kingdom")
+	code, err := countrycodes.ToCode("United Kingdom")
 	if err != nil {
 		panic("Country name not found :( ")
 	}
