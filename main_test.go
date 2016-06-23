@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/domodwyer/country-codes"
+	"github.com/domodwyer/countrycodes"
 )
 
 func TestToName(t *testing.T) {
