@@ -1,10 +1,10 @@
 [![Build Status](https://travis-ci.org/domodwyer/countrycodes.svg?branch=master)](https://travis-ci.org/domodwyer/countrycodes)
 [![GoDoc](https://godoc.org/github.com/domodwyer/countrycodes?status.svg)](https://godoc.org/github.com/domodwyer/countrycodes)
 
-#Country Codes
+# Country Codes
 Quick library file for translating __ISO 3166-1 ALPHA-2__ country codes to their readable names and back again.
 
-##Usage
+## Usage
 Fetch with `go get github.com/domodwyer/countrycodes`
 
 ```Go
